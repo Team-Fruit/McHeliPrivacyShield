@@ -141,5 +141,5 @@ Thanks to
 
 * Notch et al for Minecraft
 * Lex et al for MinecraftForge
-* Kamesuta, sjcl for McHeliPrivacyShield
+* Kamesuta, kokoa0429, sjcl for McHeliPrivacyShield
 * all [contributors](https://github.com/Team-Fruit/McHeliPrivacyShield/graphs/contributors)

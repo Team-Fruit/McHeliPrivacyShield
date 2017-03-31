@@ -14,14 +14,14 @@
 			],
 			"credits": "2017 TeamFruit",
 			"dependants": [],
-			"dependencies": ["Forge@[${minforgeversion},)"],
+			"dependencies": ["Forge", "mcheli"],
 			"parent": "",
-			"requiredMods": ["Forge@[${minforgeversion},)"],
+			"requiredMods": ["Forge", "mcheli"],
 			"logoFile": "assets/mchelishield/textures/logo.png",
 			"screenshots": [],
 			"updateUrl": "https://github.com/Team-Fruit/McHeliPrivacyShield/releases",
 			"url": "https://github.com/Team-Fruit/McHeliPrivacyShield/releases",
-			"useDependencyInformation": false
+			"useDependencyInformation": true
 		}
 	]
 }
