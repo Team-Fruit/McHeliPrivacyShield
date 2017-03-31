@@ -33,6 +33,10 @@ idea {
     }
 }
 
+dependencies {
+    compile fileTree(dir: 'lib', include: ['*.jar'])
+}
+
 minecraft {
     version = "${project.version_minecraft}-${project.version_forge}"
 
