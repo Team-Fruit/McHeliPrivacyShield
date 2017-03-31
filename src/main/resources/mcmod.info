@@ -1,0 +1,27 @@
+{
+	"modListVersion": 2,
+	"modList": [
+		{
+			"modid": "mchelishield",
+			"name": "McHeliPrivacyShield",
+			"description": "Protect your privacy from the malicious spyware, MC Helicopter Mod",
+			"mcversion": "${mcversion}",
+			"version": "${version}",
+			"authorList": [
+				"Kamesuta",
+				"kokoa0429",
+				"sjcl"
+			],
+			"credits": "2017 TeamFruit",
+			"dependants": [],
+			"dependencies": ["Forge@[${minforgeversion},)"],
+			"parent": "",
+			"requiredMods": ["Forge@[${minforgeversion},)"],
+			"logoFile": "assets/mchelishield/textures/logo.png",
+			"screenshots": [],
+			"updateUrl": "https://github.com/Team-Fruit/McHeliPrivacyShield/releases",
+			"url": "https://github.com/Team-Fruit/McHeliPrivacyShield/releases",
+			"useDependencyInformation": false
+		}
+	]
+}
