@@ -2,7 +2,13 @@ package net.teamfruit.mchelishield.asm;
 
 import javax.annotation.Nullable;
 
+import org.objectweb.asm.ClassVisitor;
+import org.objectweb.asm.ClassWriter;
+
 import net.minecraft.launchwrapper.IClassTransformer;
+import net.teamfruit.mchelishield.Log;
+import net.teamfruit.mchelishield.asm.lib.VisitorHelper;
+import net.teamfruit.mchelishield.asm.lib.VisitorHelper.TransformProvider;
 
 public class PrivacyShieldTransformer implements IClassTransformer {
 	@Override
@@ -10,14 +16,14 @@ public class PrivacyShieldTransformer implements IClassTransformer {
 		if (bytes==null||name==null||transformedName==null)
 			return bytes;
 
-		//		if (transformedName.equals("net.minecraft.client.gui.GuiScreenBook"))
-		//			return VisitorHelper.apply(bytes, name, new TransformProvider(ClassWriter.COMPUTE_FRAMES) {
-		//				@Override
-		//				public ClassVisitor createVisitor(final String name, final ClassVisitor cv) {
-		//					Log.log.info(String.format("Patching GuiScreenBook.drawScreen (class: %s)", name));
-		//					return new GuiScreenBookVisitor(name, cv);
-		//				}
-		//			});
+		if (transformedName.equals("mcheli.multiplay.MCH_MultiplayClient"))
+			return VisitorHelper.apply(bytes, name, new TransformProvider(ClassWriter.COMPUTE_FRAMES) {
+				@Override
+				public ClassVisitor createVisitor(final String name, final ClassVisitor cv) {
+					Log.log.info(String.format("Patching MCH_MultiplayClient (class: %s)", name));
+					return new MCH_MultiplayClientVisitor(name, cv);
+				}
+			});
 
 		return bytes;
 	}
