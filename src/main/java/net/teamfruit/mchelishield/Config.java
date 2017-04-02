@@ -57,17 +57,20 @@ public final class Config extends Configuration {
 	}
 
 	{
-		getCategory("ScreenShotShield").setLanguageKey("mchelishield.config.ssshield");
+		getCategory("ScreenShotShield").setLanguageKey("mchelishield.config.ssshield").setComment("Action corresponding to screen shot request");
 	}
 	public final @Nonnull ConfigProperty<String> ssmode = propertyString(get("ScreenShotShield", "Mode", "none", "select the behavior when the server requests a screenshot").setLanguageKey("mchelishield.config.ssshield.mode").setConfigEntryClass(SelectSSShieldEntry.class));
+	public final @Nonnull ConfigProperty<String> ssfile = propertyString(get("ScreenShotShield", "ImageLocation", "", "File Mode: specify the path of the image to send instead of the screenshot").setLanguageKey("mchelishield.config.ssshield.file"));
 
 	{
-		getCategory("ModListShield").setLanguageKey("mchelishield.config.mlshield");
+		getCategory("ModListShield").setLanguageKey("mchelishield.config.mlshield").setComment("Action corresponding to mod list request");
+		;
 	}
 	public final @Nonnull ConfigProperty<String> mlmode = propertyString(get("ModListShield", "Mode", "none", "select the behavior when the server requests a mod list").setLanguageKey("mchelishield.config.mlshield.mode").setConfigEntryClass(SelectMLShieldEntry.class));
+	public final @Nonnull ConfigProperty<String> mlfile = propertyString(get("ModListShield", "TextLocation", "", "File Mode: specify the path of the text to send instead of the mod list").setLanguageKey("mchelishield.config.mlshield.file"));
 
 	{
-		getCategory("Notification").setLanguageKey("mchelishield.config.notification");
+		getCategory("Notification").setLanguageKey("mchelishield.config.notification").setComment("Server requesting packet notifications");
 	}
 	public final @Nonnull ConfigProperty<Boolean> notifyChat = propertyBoolean(get("Notification", "Chat", false, "notify by chat").setLanguageKey("mchelishield.config.notification.chat"));
 	public final @Nonnull ConfigProperty<Boolean> notifyOverlay = propertyBoolean(get("Notification", "Overlay", false, "notify by overlay text").setLanguageKey("mchelishield.config.notification.overlay"));

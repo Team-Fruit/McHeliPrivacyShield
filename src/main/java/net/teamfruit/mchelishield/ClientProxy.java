@@ -9,6 +9,8 @@ import net.teamfruit.mchelishield.api.ModListShieldRegistery;
 import net.teamfruit.mchelishield.api.ScreenShotShieldRegistery;
 import net.teamfruit.mchelishield.shields.DefaultMLShield;
 import net.teamfruit.mchelishield.shields.DefaultSSShield;
+import net.teamfruit.mchelishield.shields.FileMLShield;
+import net.teamfruit.mchelishield.shields.FileSSShield;
 
 public class ClientProxy extends CommonProxy {
 	@Override
@@ -23,7 +25,9 @@ public class ClientProxy extends CommonProxy {
 		new CoreHandler().init();
 
 		ScreenShotShieldRegistery.register(new DefaultSSShield());
+		ScreenShotShieldRegistery.register(new FileSSShield());
 		ModListShieldRegistery.register(new DefaultMLShield());
+		ModListShieldRegistery.register(new FileMLShield());
 	}
 
 	@Override

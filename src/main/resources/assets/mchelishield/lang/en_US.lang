@@ -1,10 +1,16 @@
 # Screen Shot Shield
 mchelishield.config.ssshield=Screen Shot Shield
 mchelishield.config.ssshield.mode=Action Type
+mchelishield.config.ssshield.file=File Mode: Alternate image path
+mchelishield.ssshield.file.notfound=No substitute image was found. Nothing was sent to the server.
+mchelishield.ssshield.file.error=Image load error. Nothing was sent to the server.
 
 # Mod List Shield
 mchelishield.config.mlshield=Mod List Shield
 mchelishield.config.mlshield.mode=Action Type
+mchelishield.config.mlshield.file=File Mode: Alternate text file path
+mchelishield.mlshield.file.notfound=No substitute text file was found. Nothing was sent to the server.
+mchelishield.mlshield.file.error=Text load error. Nothing was sent to the server.
 
 # Notification
 mchelishield.config.notification=Notifications
@@ -12,7 +18,7 @@ mchelishield.config.notification.chat=Chat Notify
 mchelishield.config.notification.overlay=Overlay Text Notify
 mchelishield.config.notification.effect=Effect Notify
 mchelishield.config.notification.sound=Sound Notify
-mchelishield.notification.chat.screenshot.message=§dSending screenshot is requested from the server.
-mchelishield.notification.chat.modlist.message=§dSending mod list is requested from the server.
+mchelishield.notification.chat.screenshot.message=§dSending screenshot is requested from the server. Your response mode is %s.
+mchelishield.notification.chat.modlist.message=§dSending mod list is requested from the server. Your response mode is %s.
 mchelishield.notification.overlay.screenshot.message=§cSending screenshot is requested from the server.
 mchelishield.notification.overlay.modlist.message=§cSending mod list is requested from the server.
