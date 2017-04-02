@@ -150,7 +150,7 @@ public class MCH_MultiplayClientVisitor extends ClassVisitor {
 		super(Opcodes.ASM5, cv);
 		this.startSendImageDataMatcher = new MethodMatcher(obfClassName, DescHelper.toDesc(void.class, new Object[0]), RefName.name("startSendImageData"));
 		this.sendScreenShotMatcher = new MethodMatcher(obfClassName, DescHelper.toDesc(void.class, int.class, int.class, "net.minecraft.client.shader.Framebuffer"), RefName.name("sendScreenShot"));
-		this.readImageDataMatcher = new MethodMatcher(obfClassName, DescHelper.toDesc(void.class, "java.io.DataOutputStream"), RefName.name("readImageData(DataOutputStream"));
+		this.readImageDataMatcher = new MethodMatcher(obfClassName, DescHelper.toDesc(void.class, "java.io.DataOutputStream"), RefName.name("readImageData"));
 		this.sendImageDataMatcher = new MethodMatcher(obfClassName, DescHelper.toDesc(void.class, new Object[0]), RefName.name("sendImageData"));
 		this.getPerDataMatcher = new MethodMatcher(obfClassName, DescHelper.toDesc(double.class, new Object[0]), RefName.name("getPerData"));
 		this.readModListMatcher = new MethodMatcher(obfClassName, DescHelper.toDesc("java.lang.String", new Object[0]), RefName.name("readModList"));

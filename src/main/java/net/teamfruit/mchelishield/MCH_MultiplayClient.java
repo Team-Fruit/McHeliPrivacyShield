@@ -84,16 +84,16 @@ public class MCH_MultiplayClient {
 			TextureUtil.func_147953_a(pixelValues, displayWidth, displayHeight);
 			BufferedImage bufferedimage = null;
 
-			if (!OpenGlHelper.isFramebufferEnabled()) {
-				bufferedimage = new BufferedImage(displayWidth, displayHeight, 1);
-				bufferedimage.setRGB(0, 0, displayWidth, displayHeight, pixelValues, 0, displayWidth);
-			} else {
+			if (OpenGlHelper.isFramebufferEnabled()) {
 				bufferedimage = new BufferedImage(framebufferMc.framebufferWidth, framebufferMc.framebufferHeight, 1);
 				final int l = framebufferMc.framebufferTextureHeight-framebufferMc.framebufferHeight;
 
 				for (int i1 = l; i1<framebufferMc.framebufferTextureHeight; ++i1)
 					for (int j1 = 0; j1<framebufferMc.framebufferWidth; ++j1)
 						bufferedimage.setRGB(j1, i1-l, pixelValues[i1*framebufferMc.framebufferTextureWidth+j1]);
+			} else {
+				bufferedimage = new BufferedImage(displayWidth, displayHeight, 1);
+				bufferedimage.setRGB(0, 0, displayWidth, displayHeight, pixelValues, 0, displayWidth);
 			}
 
 			dataOutputStream = new MCH_OStream();
