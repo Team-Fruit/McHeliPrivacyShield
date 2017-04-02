@@ -19,7 +19,9 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.common.MinecraftForge;
 import net.teamfruit.mchelishield.api.ModListShieldEvent;
+import net.teamfruit.mchelishield.api.ModListShieldRegistery;
 import net.teamfruit.mchelishield.api.ScreenShotShieldEvent;
+import net.teamfruit.mchelishield.api.ScreenShotShieldRegistery;
 
 public class CoreHandler {
 	public final @Nonnull Config configHandler = Config.getConfig();
@@ -37,8 +39,9 @@ public class CoreHandler {
 	@SubscribeEvent
 	public void onScreenShotShield(final @Nonnull ScreenShotShieldEvent.Post event) {
 		if (Config.getConfig().notifyChat.get()) {
-			ChatBuilder.create("mchelishield.notification.chat.screenshot.message").useTranslation().setParams(Config.getConfig().ssmode.get()).chatClient();
-			ChatBuilder.create("mchelishield.notification.chat.screenshot.message.mode").useTranslation().setParams(Config.getConfig().ssmode.get()).chatClient();
+			final String mode = ScreenShotShieldRegistery.getListener(Config.getConfig().ssmode.get()).name();
+			ChatBuilder.create("mchelishield.notification.chat.screenshot.message").useTranslation().setParams(mode).chatClient();
+			ChatBuilder.create("mchelishield.notification.chat.screenshot.message.mode").useTranslation().setParams(mode).chatClient();
 		}
 		if (Config.getConfig().notifySound.get())
 			FMLClientHandler.instance().getClient().getSoundHandler().playSound(PositionedSoundRecord.func_147674_a(new ResourceLocation("mchelishield", "notification.sound"), 1.0F));
@@ -53,8 +56,9 @@ public class CoreHandler {
 	@SubscribeEvent
 	public void onModListShield(final @Nonnull ModListShieldEvent.Post event) {
 		if (Config.getConfig().notifyChat.get()) {
-			ChatBuilder.create("mchelishield.notification.chat.modlist.message").useTranslation().setParams(Config.getConfig().mlmode.get()).chatClient();
-			ChatBuilder.create("mchelishield.notification.chat.modlist.message.mode").useTranslation().setParams(Config.getConfig().mlmode.get()).chatClient();
+			final String mode = ModListShieldRegistery.getListener(Config.getConfig().mlmode.get()).name();
+			ChatBuilder.create("mchelishield.notification.chat.modlist.message").useTranslation().setParams(mode).chatClient();
+			ChatBuilder.create("mchelishield.notification.chat.modlist.message.mode").useTranslation().setParams(mode).chatClient();
 		}
 		if (Config.getConfig().notifySound.get())
 			FMLClientHandler.instance().getClient().getSoundHandler().playSound(PositionedSoundRecord.func_147674_a(new ResourceLocation("mchelishield", "notification.sound"), 1.0F));

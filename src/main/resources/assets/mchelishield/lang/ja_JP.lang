@@ -1,0 +1,35 @@
+# Config
+mchelishield.config.name=MC Heli Privacy Shield 設定
+
+# Screen Shot Shield
+mchelishield.config.ssshield=スクリーンショット保護
+mchelishield.config.ssshield.mode=動作タイプ
+mchelishield.config.ssshield.mode.none=何もしない
+mchelishield.config.ssshield.mode.default=スクリーンショットをサーバーに送る (MCヘリ既定の動作)
+mchelishield.config.ssshield.mode.file=ファイルモード: 代替画像をサーバーへ送る
+mchelishield.config.ssshield.file=ファイルモード: 代替画像のパス
+mchelishield.ssshield.file.notfound=代替画像が見つかりませんでした。何もサーバーに送られませんでした。
+mchelishield.ssshield.file.error=画像読み込みエラー発生。何もサーバーに送られませんでした。
+
+# Mod List Shield
+mchelishield.config.mlshield=Modリスト保護
+mchelishield.config.mlshield.mode=動作タイプ
+mchelishield.config.mlshield.mode.none=何もしない
+mchelishield.config.mlshield.mode.default=Modリストをサーバーに送る (MCヘリ既定の動作)
+mchelishield.config.mlshield.mode.file=ファイルモード: 代替テキストをサーバーへ送る
+mchelishield.config.mlshield.file=ファイルモード: 代替テキストファイルのパス
+mchelishield.mlshield.file.notfound=代替テキストファイルが見つかりませんでした。何もサーバーに送られませんでした。
+mchelishield.mlshield.file.error=テキスト読み込みエラー発生。何もサーバーに送られませんでした。
+
+# Notification
+mchelishield.config.notification=通知
+mchelishield.config.notification.chat=チャット通知
+mchelishield.config.notification.overlay=テキストオーバーレイ通知
+mchelishield.config.notification.effect=エフェクト通知
+mchelishield.config.notification.sound=効果音通知
+mchelishield.notification.chat.screenshot.message=§dサーバーからスクリーンショットが要求されました。
+mchelishield.notification.chat.screenshot.message.mode=§d現在の返答モードは§r「%s」§dです。
+mchelishield.notification.chat.modlist.message=§dサーバーからModリストが要求されました。
+mchelishield.notification.chat.modlist.message.mode=§d現在の返答モードは§r「%s」§dです。
+mchelishield.notification.overlay.screenshot.message=§c[警告] §dサーバーからスクリーンショットが要求されました。
+mchelishield.notification.overlay.modlist.message=§c[警告] §dサーバーからModリストが要求されました。

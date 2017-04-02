@@ -12,6 +12,7 @@ import cpw.mods.fml.client.config.GuiConfig;
 import cpw.mods.fml.client.config.IConfigElement;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.resources.I18n;
 import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.ConfigElement;
 import net.teamfruit.mchelishield.Config;
@@ -22,7 +23,7 @@ public class ConfigGuiFactory implements IModGuiFactory {
 	public static class ConfigGui extends GuiConfig {
 
 		public ConfigGui(final @Nullable GuiScreen parent) {
-			super(parent, getConfigElementsFromConfig(), Reference.MODID, false, false, GuiConfig.getAbridgedConfigPath(Config.getConfig().getFilePath()));
+			super(parent, getConfigElementsFromConfig(), Reference.MODID, false, false, I18n.format("mchelishield.config.name"));
 		}
 
 		@SuppressWarnings({ "rawtypes" })

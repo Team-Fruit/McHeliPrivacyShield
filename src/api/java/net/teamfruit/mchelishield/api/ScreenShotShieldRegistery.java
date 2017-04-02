@@ -35,10 +35,14 @@ public class ScreenShotShieldRegistery {
 	}
 
 	public static @Nullable BufferedImage onRequested(final @Nonnull String mode) {
-		ScrennShotShield shield = listeners.get(mode);
+		return getListener(mode).onRequested();
+	}
+
+	public static @Nonnull ScrennShotShield getListener(final @Nonnull String id) {
+		ScrennShotShield shield = listeners.get(id);
 		if (shield==null)
 			shield = defaultListener;
-		return shield.onRequested();
+		return shield;
 	}
 
 	public static @Nonnull Map<String, ScrennShotShield> getListeners() {

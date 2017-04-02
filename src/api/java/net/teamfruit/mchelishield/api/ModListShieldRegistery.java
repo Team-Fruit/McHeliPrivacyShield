@@ -35,10 +35,14 @@ public class ModListShieldRegistery {
 	}
 
 	public static @Nullable List<String> onRequested(final @Nonnull String mode, final @Nonnull String playerName) {
-		ModListShield shield = listeners.get(mode);
+		return getListener(mode).onRequested(playerName);
+	}
+
+	public static @Nonnull ModListShield getListener(final @Nonnull String id) {
+		ModListShield shield = listeners.get(id);
 		if (shield==null)
 			shield = defaultListener;
-		return shield.onRequested(playerName);
+		return shield;
 	}
 
 	public static @Nonnull Map<String, ModListShield> getListeners() {
