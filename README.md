@@ -1,5 +1,4 @@
-[![Latest Tag](https://img.shields.io/github/tag/Team-Fruit/McHeliPrivacyShield.svg?label=Latest Tag&style=flat)](https://github.com/Team-Fruit/McHeliPrivacyShield/tags)
-[![Latest Release](https://img.shields.io/github/release/Team-Fruit/McHeliPrivacyShield.svg?label=Latest Release&style=flat)](https://github.com/Team-Fruit/McHeliPrivacyShield/releases)
+[![Latest Tag](https://img.shields.io/github/tag/Team-Fruit/McHeliPrivacyShield.svg?label=Latest Tag&style=flat)](https://github.com/Team-Fruit/McHeliPrivacyShield/tags) [![Latest Release](https://img.shields.io/github/release/Team-Fruit/McHeliPrivacyShield.svg?label=Latest Release&style=flat)](https://github.com/Team-Fruit/McHeliPrivacyShield/releases)
 
 # McHeliPrivacyShield
 ![Minecraft 1.7.10](https://img.shields.io/badge/Minecraft-1.7.10-yellow.svg?style=flat)
@@ -24,7 +23,28 @@
 
 ## About
 
-Easy but powerful Minecraft GUI widget
+かの有名な「MC Helicopter Mod」
+リアルな機体が追加されマイクラであるのかと疑ってしまうくらい出来のいいModです。
+しかしとても残念な点があります。
+サーバーでマルチプレイ時、クライアント側のスクショ、クライアント側のModリストをサーバーに送信する機能、いわゆるバックドア、スパイウェアがMC Heliには仕込まれています。
+言い換えれば、私たちの情報がマルチプレイサーバーのOPはコマンドひとつで抜き取れてしまう点に問題があります。
+私たちはクライアント側の画面や、クライアント側の導入Modリストなどのプライバシーを自分自身で守るべきではないでしょうか？
+
+このModは、サーバーから要求リクエストが来た時の動作を変更することができます。
+スクショが送信されることを阻止することはもちろん、代わりの画像を送信したり、リクエストが来たことを検知して通知することもできます。
+このModを導入してより安全にマイクラライフを送りましょう。
+
+---
+The famous "MC Helicopter Mod"
+It's as good as I can suspect that a real aircraft is added and it's a microphone.
+But there is a very disappointing point.
+MC Heli has a function to transmit MultiPlay, client side squash, client side Mod list to server, so-called back door, spyware on server.
+In other words, there is a problem that our information can be extracted by the command of the multiplayer server by one command.
+Should we protect ourselves with privacy such as client side screen, client side introduction Modlist etc?
+
+This Mod can change the behavior when request request arrives from the server.
+You can also send an alternative image, as well as detect that the request has arrived, as well as block squish from being sent.
+Let's send Micra life more safely by introducing this Mod.
 
 ## Contacts
 
