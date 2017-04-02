@@ -31,7 +31,7 @@ public class ScreenShotShieldRegistery {
 	 * @param listener 返答タイプ
 	 */
 	public static void register(final @Nonnull ScrennShotShield listener) {
-		listeners.put(listener.name(), listener);
+		listeners.put(listener.id(), listener);
 	}
 
 	public static @Nullable BufferedImage onRequested(final @Nonnull String mode) {

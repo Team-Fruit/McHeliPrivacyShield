@@ -19,6 +19,13 @@ public interface ModListShield {
 	String name();
 
 	/**
+	 * この動作のID
+	 * @return ID
+	 */
+	@Nonnull
+	String id();
+
+	/**
 	 * リクエストを受けた時呼び出されます。
 	 * @param playerName プレイヤーの名前
 	 * @return 送信するテキスト ※nullの場合は送信されません

@@ -19,6 +19,13 @@ public interface ScrennShotShield {
 	String name();
 
 	/**
+	 * この動作のID
+	 * @return ID
+	 */
+	@Nonnull
+	String id();
+
+	/**
 	 * リクエストを受けた時呼び出されます。
 	 * @return 送信する画像 ※nullの場合は送信されません
 	 */

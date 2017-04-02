@@ -9,6 +9,7 @@ import org.apache.commons.io.IOUtils;
 
 import com.google.common.collect.Lists;
 
+import net.minecraft.client.resources.I18n;
 import net.teamfruit.mchelishield.ChatBuilder;
 import net.teamfruit.mchelishield.Config;
 import net.teamfruit.mchelishield.Log;
@@ -17,6 +18,11 @@ import net.teamfruit.mchelishield.api.ModListShield;
 public class FileMLShield implements ModListShield {
 	@Override
 	public String name() {
+		return I18n.format("mchelishield.config.mlshield.mode.file");
+	}
+
+	@Override
+	public String id() {
 		return "file";
 	}
 

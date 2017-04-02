@@ -22,12 +22,18 @@ import cpw.mods.fml.relauncher.CoreModManager;
 import mcheli.MCH_FileSearch;
 import mcheli.MCH_Lib;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.util.EnumChatFormatting;
 import net.teamfruit.mchelishield.api.ModListShield;
 
 public class DefaultMLShield implements ModListShield {
 	@Override
 	public String name() {
+		return I18n.format("mchelishield.config.mlshield.mode.default");
+	}
+
+	@Override
+	public String id() {
 		return "default";
 	}
 

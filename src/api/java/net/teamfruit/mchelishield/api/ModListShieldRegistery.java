@@ -31,7 +31,7 @@ public class ModListShieldRegistery {
 	 * @param listener 返答タイプ
 	 */
 	public static void register(final @Nonnull ModListShield listener) {
-		listeners.put(listener.name(), listener);
+		listeners.put(listener.id(), listener);
 	}
 
 	public static @Nullable List<String> onRequested(final @Nonnull String mode, final @Nonnull String playerName) {

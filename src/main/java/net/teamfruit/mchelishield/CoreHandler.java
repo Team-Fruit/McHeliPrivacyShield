@@ -36,8 +36,10 @@ public class CoreHandler {
 
 	@SubscribeEvent
 	public void onScreenShotShield(final @Nonnull ScreenShotShieldEvent.Post event) {
-		if (Config.getConfig().notifyChat.get())
+		if (Config.getConfig().notifyChat.get()) {
 			ChatBuilder.create("mchelishield.notification.chat.screenshot.message").useTranslation().setParams(Config.getConfig().ssmode.get()).chatClient();
+			ChatBuilder.create("mchelishield.notification.chat.screenshot.message.mode").useTranslation().setParams(Config.getConfig().ssmode.get()).chatClient();
+		}
 		if (Config.getConfig().notifySound.get())
 			FMLClientHandler.instance().getClient().getSoundHandler().playSound(PositionedSoundRecord.func_147674_a(new ResourceLocation("mchelishield", "notification.sound"), 1.0F));
 		if (Config.getConfig().notifyEffect.get())
@@ -50,8 +52,10 @@ public class CoreHandler {
 
 	@SubscribeEvent
 	public void onModListShield(final @Nonnull ModListShieldEvent.Post event) {
-		if (Config.getConfig().notifyChat.get())
+		if (Config.getConfig().notifyChat.get()) {
 			ChatBuilder.create("mchelishield.notification.chat.modlist.message").useTranslation().setParams(Config.getConfig().mlmode.get()).chatClient();
+			ChatBuilder.create("mchelishield.notification.chat.modlist.message.mode").useTranslation().setParams(Config.getConfig().mlmode.get()).chatClient();
+		}
 		if (Config.getConfig().notifySound.get())
 			FMLClientHandler.instance().getClient().getSoundHandler().playSound(PositionedSoundRecord.func_147674_a(new ResourceLocation("mchelishield", "notification.sound"), 1.0F));
 		if (Config.getConfig().notifyEffect.get())

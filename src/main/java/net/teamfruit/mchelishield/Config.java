@@ -87,7 +87,7 @@ public final class Config extends Configuration {
 			final Map<Object, String> modes = Maps.newHashMap();
 			for (final Iterator<Entry<String, ScrennShotShield>> itr = listeners.entrySet().iterator(); itr.hasNext();) {
 				final Entry<String, ScrennShotShield> entry = itr.next();
-				modes.put(entry.getKey(), entry.getKey());
+				modes.put(entry.getKey(), entry.getValue().name());
 			}
 			return modes;
 		}
@@ -103,7 +103,7 @@ public final class Config extends Configuration {
 			final Map<Object, String> modes = Maps.newHashMap();
 			for (final Iterator<Entry<String, ModListShield>> itr = listeners.entrySet().iterator(); itr.hasNext();) {
 				final Entry<String, ModListShield> entry = itr.next();
-				modes.put(entry.getKey(), entry.getKey());
+				modes.put(entry.getKey(), entry.getValue().name());
 			}
 			return modes;
 		}

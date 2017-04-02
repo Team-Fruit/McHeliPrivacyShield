@@ -9,6 +9,7 @@ import org.lwjgl.opengl.GL11;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.texture.TextureUtil;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.client.shader.Framebuffer;
 import net.teamfruit.mchelishield.api.ScrennShotShield;
 
@@ -18,6 +19,11 @@ public class DefaultSSShield implements ScrennShotShield {
 
 	@Override
 	public String name() {
+		return I18n.format("mchelishield.config.ssshield.mode.default");
+	}
+
+	@Override
+	public String id() {
 		return "default";
 	}
 

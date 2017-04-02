@@ -5,6 +5,7 @@ import java.io.File;
 
 import javax.imageio.ImageIO;
 
+import net.minecraft.client.resources.I18n;
 import net.teamfruit.mchelishield.ChatBuilder;
 import net.teamfruit.mchelishield.Config;
 import net.teamfruit.mchelishield.Log;
@@ -13,6 +14,11 @@ import net.teamfruit.mchelishield.api.ScrennShotShield;
 public class FileSSShield implements ScrennShotShield {
 	@Override
 	public String name() {
+		return I18n.format("mchelishield.config.ssshield.mode.file");
+	}
+
+	@Override
+	public String id() {
 		return "file";
 	}
 
