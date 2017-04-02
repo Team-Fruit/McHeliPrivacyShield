@@ -1,0 +1,10 @@
+{
+	"notification.sound":{
+		"category":"player",
+		"sounds":[
+			{
+				"name": "screenshot"
+			}
+		]
+	}
+}

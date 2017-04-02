@@ -1,6 +1,9 @@
 package net.teamfruit.mchelishield;
 
 import java.io.File;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import javax.annotation.Nonnull;
@@ -8,11 +11,20 @@ import javax.annotation.Nullable;
 
 import org.apache.commons.lang3.StringUtils;
 
+import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
+import cpw.mods.fml.client.config.GuiConfig;
+import cpw.mods.fml.client.config.GuiConfigEntries;
+import cpw.mods.fml.client.config.GuiConfigEntries.SelectValueEntry;
+import cpw.mods.fml.client.config.IConfigElement;
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
+import net.teamfruit.mchelishield.api.ModListShield;
+import net.teamfruit.mchelishield.api.ModListShieldRegistery;
+import net.teamfruit.mchelishield.api.ScreenShotShieldRegistery;
+import net.teamfruit.mchelishield.api.ScrennShotShield;
 
 public final class Config extends Configuration {
 	private static @Nullable Config instance;
@@ -44,8 +56,58 @@ public final class Config extends Configuration {
 			config.reload();
 	}
 
+	{
+		getCategory("ScreenShotShield").setLanguageKey("mchelishield.config.ssshield");
+	}
+	public final @Nonnull ConfigProperty<String> ssmode = propertyString(get("ScreenShotShield", "Mode", "none", "select the behavior when the server requests a screenshot").setLanguageKey("mchelishield.config.ssshield.mode").setConfigEntryClass(SelectSSShieldEntry.class));
+
+	{
+		getCategory("ModListShield").setLanguageKey("mchelishield.config.mlshield");
+	}
+	public final @Nonnull ConfigProperty<String> mlmode = propertyString(get("ModListShield", "Mode", "none", "select the behavior when the server requests a mod list").setLanguageKey("mchelishield.config.mlshield.mode").setConfigEntryClass(SelectMLShieldEntry.class));
+
+	{
+		getCategory("Notification").setLanguageKey("mchelishield.config.notification");
+	}
+	public final @Nonnull ConfigProperty<Boolean> notifyChat = propertyBoolean(get("Notification", "Chat", false, "notify by chat").setLanguageKey("mchelishield.config.notification.chat"));
+	public final @Nonnull ConfigProperty<Boolean> notifyOverlay = propertyBoolean(get("Notification", "Overlay", false, "notify by overlay text").setLanguageKey("mchelishield.config.notification.overlay"));
+	public final @Nonnull ConfigProperty<Boolean> notifyEffect = propertyBoolean(get("Notification", "Effect", false, "notify by effect").setLanguageKey("mchelishield.config.notification.effect"));
+	public final @Nonnull ConfigProperty<Boolean> notifySound = propertyBoolean(get("Notification", "Sound", false, "notify by sound").setLanguageKey("mchelishield.config.notification.sound"));
+
+	public static class SelectSSShieldEntry extends SelectValueEntry {
+		public SelectSSShieldEntry(final GuiConfig owningScreen, final GuiConfigEntries owningEntryList, final IConfigElement<String> configElement) {
+			super(owningScreen, owningEntryList, configElement, getSelectable());
+		}
+
+		private static @Nonnull Map<Object, String> getSelectable() {
+			final Map<String, ScrennShotShield> listeners = ScreenShotShieldRegistery.getListeners();
+			final Map<Object, String> modes = Maps.newHashMap();
+			for (final Iterator<Entry<String, ScrennShotShield>> itr = listeners.entrySet().iterator(); itr.hasNext();) {
+				final Entry<String, ScrennShotShield> entry = itr.next();
+				modes.put(entry.getKey(), entry.getKey());
+			}
+			return modes;
+		}
+	}
+
+	public static class SelectMLShieldEntry extends SelectValueEntry {
+		public SelectMLShieldEntry(final GuiConfig owningScreen, final GuiConfigEntries owningEntryList, final IConfigElement<String> configElement) {
+			super(owningScreen, owningEntryList, configElement, getSelectable());
+		}
+
+		private static @Nonnull Map<Object, String> getSelectable() {
+			final Map<String, ModListShield> listeners = ModListShieldRegistery.getListeners();
+			final Map<Object, String> modes = Maps.newHashMap();
+			for (final Iterator<Entry<String, ModListShield>> itr = listeners.entrySet().iterator(); itr.hasNext();) {
+				final Entry<String, ModListShield> entry = itr.next();
+				modes.put(entry.getKey(), entry.getKey());
+			}
+			return modes;
+		}
+	}
+
 	private Config(final @Nonnull File configFile) {
-		super(configFile);
+		super(configFile, "1.0.0", true);
 		this.configFile = configFile;
 	}
 
@@ -97,6 +159,10 @@ public final class Config extends Configuration {
 			this.config = config;
 			this.property = property;
 			this.prop = prop;
+		}
+
+		public @Nonnull Property getProperty() {
+			return this.property;
 		}
 
 		public @Nonnull ConfigProperty<E> setListener(@Nullable final ConfigListener<E> listener) {

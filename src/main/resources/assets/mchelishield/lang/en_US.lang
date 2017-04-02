@@ -1,0 +1,16 @@
+# Screen Shot Shield
+mchelishield.config.ssshield=Screen Shot Shield
+mchelishield.config.ssshield.mode=Action Type
+
+# Mod List Shield
+mchelishield.config.mlshield=Mod List Shield
+mchelishield.config.mlshield.mode=Action Type
+
+# Notification
+mchelishield.config.notification=Notifications
+mchelishield.config.notification.chat=Chat Notify
+mchelishield.config.notification.overlay=Overlay Text Notify
+mchelishield.config.notification.effect=Effect Notify
+mchelishield.config.notification.sound=Sound Notify
+mchelishield.notification.chat.message=§dSending screenshot is requested from the server.
+mchelishield.notification.modlist.message=§dSending mod list is requested from the server.
