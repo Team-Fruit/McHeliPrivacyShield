@@ -23,11 +23,11 @@ public class ConfigGuiFactory implements IModGuiFactory {
 	public static class ConfigGui extends GuiConfig {
 
 		public ConfigGui(final @Nullable GuiScreen parent) {
-			super(parent, getConfigElementsFromConfig(), Reference.MODID, false, false, I18n.format("mchelishield.config.name"));
+			super(parent, getConfigElements(), Reference.MODID, false, false, I18n.format("mchelishield.config.name"));
 		}
 
 		@SuppressWarnings({ "rawtypes" })
-		static @Nonnull List<IConfigElement> getConfigElementsFromConfig() {
+		private static @Nonnull List<IConfigElement> getConfigElements() {
 			final List<IConfigElement> list = new ArrayList<IConfigElement>();
 
 			for (final String cat : Config.getConfig().getCategoryNames()) {

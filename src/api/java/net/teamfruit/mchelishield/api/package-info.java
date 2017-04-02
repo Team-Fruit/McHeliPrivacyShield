@@ -7,4 +7,3 @@
 package net.teamfruit.mchelishield.api;
 
 import cpw.mods.fml.common.API;
-import net.teamfruit.mchelishield.Reference;
