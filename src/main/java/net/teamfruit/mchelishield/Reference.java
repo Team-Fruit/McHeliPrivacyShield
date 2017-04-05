@@ -4,7 +4,7 @@ import javax.annotation.Nonnull;
 
 public class Reference {
 	public static final @Nonnull String MODID = "mchelishield";
-	public static final @Nonnull String NAME = "McHeliPrivacyShield";
+	public static final @Nonnull String NAME = "MC Heli Privacy Shield";
 	public static final @Nonnull String VERSION = "${version}";
 	public static final @Nonnull String FORGE = "${forgeversion}";
 	public static final @Nonnull String MINECRAFT = "${mcversion}";

@@ -2,9 +2,12 @@ package net.teamfruit.mchelishield.shields;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.util.List;
 
+import org.apache.commons.io.Charsets;
 import org.apache.commons.io.IOUtils;
 
 import com.google.common.collect.Lists;
@@ -32,8 +35,15 @@ public class FileMLShield implements ModListShield {
 		try {
 			final File file = new File(Config.getConfig().mlfile.get());
 			if (file.exists()) {
-				final FileReader fr = new FileReader(file);
-				br = new BufferedReader(fr);
+				Charset charset = null;
+				try {
+					charset = Charset.forName(Config.getConfig().mlfileencode.get());
+				} catch (final Exception e) {
+				}
+				if (charset==null)
+					charset = Charsets.UTF_8;
+
+				br = new BufferedReader(new InputStreamReader(new FileInputStream(file), charset));
 				final List<String> modlist = Lists.newArrayList();
 				String line;
 				while ((line = br.readLine())!=null)

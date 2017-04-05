@@ -1,5 +1,5 @@
 # Config
-mchelishield.config.name=MC Heli Privacy Shield Settings
+mchelishield.config.name=MC Heli Privacy Settings
 
 # Screen Shot Shield
 mchelishield.config.ssshield=Screen Shot Shield
@@ -18,6 +18,7 @@ mchelishield.config.mlshield.mode.none=Do Nothing
 mchelishield.config.mlshield.mode.default=Send Mod List to Server (MC Heli Default Action)
 mchelishield.config.mlshield.mode.file=File Mode: Send Alternate Text to Server
 mchelishield.config.mlshield.file=File Mode: Alternate Text File Path
+mchelishield.config.mlshield.file.encode=File Mode: Alternate Text File Encode
 mchelishield.mlshield.file.notfound=No substitute text file was found. Nothing was sent to the server.
 mchelishield.mlshield.file.error=Text load error. Nothing was sent to the server.
 

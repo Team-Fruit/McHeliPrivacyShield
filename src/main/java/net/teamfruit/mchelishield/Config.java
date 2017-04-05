@@ -1,6 +1,7 @@
 package net.teamfruit.mchelishield;
 
 import java.io.File;
+import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -9,7 +10,9 @@ import java.util.Set;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import org.apache.commons.io.Charsets;
 import org.apache.commons.lang3.StringUtils;
+import org.lwjgl.input.Keyboard;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
@@ -68,6 +71,7 @@ public final class Config extends Configuration {
 	}
 	public final @Nonnull ConfigProperty<String> mlmode = propertyString(get("ModListShield", "Mode", "none", "select the behavior when the server requests a mod list").setLanguageKey("mchelishield.config.mlshield.mode").setConfigEntryClass(SelectMLShieldEntry.class));
 	public final @Nonnull ConfigProperty<String> mlfile = propertyString(get("ModListShield", "TextLocation", "", "File Mode: specify the path of the text to send instead of the mod list").setLanguageKey("mchelishield.config.mlshield.file"));
+	public final @Nonnull ConfigProperty<String> mlfileencode = propertyString(get("ModListShield", "TextEncode", Charsets.UTF_8.name(), "File Mode: encode of the text. put a valid 'nio' encoding name.").setLanguageKey("mchelishield.config.mlshield.file.encode").setConfigEntryClass(StringMLEncofingEntry.class));
 
 	{
 		getCategory("Notification").setLanguageKey("mchelishield.config.notification").setComment("Server requesting packet notifications");
@@ -106,6 +110,26 @@ public final class Config extends Configuration {
 				modes.put(entry.getKey(), entry.getValue().name());
 			}
 			return modes;
+		}
+	}
+
+	public static class StringMLEncofingEntry extends GuiConfigEntries.StringEntry {
+		public StringMLEncofingEntry(final GuiConfig owningScreen, final GuiConfigEntries owningEntryList, final IConfigElement<String> configElement) {
+			super(owningScreen, owningEntryList, configElement);
+		}
+
+		@Override
+		public void keyTyped(final char eventChar, final int eventKey) {
+			if (enabled()||eventKey==Keyboard.KEY_LEFT||eventKey==Keyboard.KEY_RIGHT||eventKey==Keyboard.KEY_HOME||eventKey==Keyboard.KEY_END) {
+				this.textFieldValue.textboxKeyTyped(enabled() ? eventChar : Keyboard.CHAR_NONE, eventKey);
+
+				try {
+					Charset.forName(this.textFieldValue.getText());
+					this.isValidValue = true;
+				} catch (final Exception e) {
+					this.isValidValue = false;
+				}
+			}
 		}
 	}
 

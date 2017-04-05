@@ -3,7 +3,7 @@
 	"modList": [
 		{
 			"modid": "mchelishield",
-			"name": "McHeliPrivacyShield",
+			"name": "MC Heli Privacy Shield",
 			"description": "Protect your privacy from the malicious spyware, MC Helicopter Mod",
 			"mcversion": "${mcversion}",
 			"version": "${version}",
