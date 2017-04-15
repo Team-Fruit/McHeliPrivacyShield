@@ -2,11 +2,6 @@
 
 # McHeliPrivacyShield
 ![Minecraft 1.7.10](https://img.shields.io/badge/Minecraft-1.7.10-yellow.svg?style=flat)
-![Minecraft 1.8.9](https://img.shields.io/badge/Minecraft-1.8.9-green.svg?style=flat)
-![Minecraft 1.9.4](https://img.shields.io/badge/Minecraft-1.9.4-green.svg?style=flat)
-![Minecraft 1.10.2](https://img.shields.io/badge/Minecraft-1.10.2-green.svg?style=flat)
-![Minecraft 1.11](https://img.shields.io/badge/Minecraft-1.11-green.svg?style=flat)
-![Minecraft 1.11.2](https://img.shields.io/badge/Minecraft-1.11.2-green.svg?style=flat)
 
 ## Table of Contents
 
@@ -53,10 +48,10 @@ Let's send Micra life more safely by introducing this Mod.
 ## License
 
 * McHeliPrivacyShield
-  - (c) 2016 TeamFruit
+  - (c) 2017 TeamFruit
   - [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://opensource.org/licenses/mit-license.php)
 * Textures and Models
-  - (c) 2016 TeamFruit
+  - (c) 2017 TeamFruit
   - [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%203.0-yellow.svg?style=flat)](https://creativecommons.org/licenses/by-nc-sa/3.0/)
 * Text and Translations
   - [![License](https://img.shields.io/badge/License-No%20Restriction-green.svg?style=flat)](https://creativecommons.org/publicdomain/zero/1.0/)
