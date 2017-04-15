@@ -49,7 +49,7 @@ Let's send Micra life more safely by introducing this Mod.
 
 * McHeliPrivacyShield
   - (c) 2017 TeamFruit
-  - [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://opensource.org/licenses/mit-license.php)
+  - [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/Team-Fruit/McHeliPrivacyShield/blob/master/LICENSE.md)
 * Textures and Models
   - (c) 2017 TeamFruit
   - [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%203.0-yellow.svg?style=flat)](https://creativecommons.org/licenses/by-nc-sa/3.0/)
