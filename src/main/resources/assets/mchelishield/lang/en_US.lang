@@ -2,35 +2,35 @@
 mchelishield.config.name=MC Heli Privacy Settings
 
 # Screen Shot Shield
-mchelishield.config.ssshield=Screen Shot Shield
+mchelishield.config.ssshield=Screenshot Shield
 mchelishield.config.ssshield.mode=Action Type
 mchelishield.config.ssshield.mode.none=Do Nothing
 mchelishield.config.ssshield.mode.default=Send Screenshot to Server (MC Heli Default Action)
-mchelishield.config.ssshield.mode.file=File Mode: Send Alternate Image to Server
-mchelishield.config.ssshield.file=File Mode: Alternate Image Path
-mchelishield.ssshield.file.notfound=No substitute image was found. Nothing was sent to the server.
-mchelishield.ssshield.file.error=Image load error. Nothing was sent to the server.
+mchelishield.config.ssshield.mode.file=File Mode: Send Alternative Image to Server
+mchelishield.config.ssshield.file=File Mode: Alternative Image Path
+mchelishield.ssshield.file.notfound=The substitute image was not found. Nothing was sent to the server.
+mchelishield.ssshield.file.error=Error loading image. Nothing was sent to the server.
 
 # Mod List Shield
 mchelishield.config.mlshield=Mod List Shield
 mchelishield.config.mlshield.mode=Action Type
 mchelishield.config.mlshield.mode.none=Do Nothing
-mchelishield.config.mlshield.mode.default=Send Mod List to Server (MC Heli Default Action)
-mchelishield.config.mlshield.mode.file=File Mode: Send Alternate Text to Server
-mchelishield.config.mlshield.file=File Mode: Alternate Text File Path
-mchelishield.config.mlshield.file.encode=File Mode: Alternate Text File Encode
-mchelishield.mlshield.file.notfound=No substitute text file was found. Nothing was sent to the server.
-mchelishield.mlshield.file.error=Text load error. Nothing was sent to the server.
+mchelishield.config.mlshield.mode.default=Send Mod List to Server (MC Heli Default)
+mchelishield.config.mlshield.mode.file=File Mode: Send Custom Text to Server
+mchelishield.config.mlshield.file=File Mode: Custom Text File Path
+mchelishield.config.mlshield.file.encode=File Mode: Custom Text File Encode
+mchelishield.mlshield.file.notfound=The substitute text file was not found. Nothing was sent to the server.
+mchelishield.mlshield.file.error=Error loading text. Nothing was sent to the server.
 
 # Notification
 mchelishield.config.notification=Notifications
-mchelishield.config.notification.chat=Chat Notify
-mchelishield.config.notification.overlay=Overlay Text Notify
-mchelishield.config.notification.effect=Flash Effect Notify
-mchelishield.config.notification.sound=Sound Notify
-mchelishield.notification.chat.screenshot.message=§dSending screenshot is requested from the server.
+mchelishield.config.notification.chat=Chat Alert
+mchelishield.config.notification.overlay=Text Overlay Alert
+mchelishield.config.notification.effect=Flashing Alert
+mchelishield.config.notification.sound=Sound Alert
+mchelishield.notification.chat.screenshot.message=§dThe server is requesting a screenshot from you.
 mchelishield.notification.chat.screenshot.message.mode=§dYour response mode is §r"%s"§d.
-mchelishield.notification.chat.modlist.message=§dSending mod list is requested from the server.
+mchelishield.notification.chat.modlist.message=§dThe server is requesting your list of installed mods.
 mchelishield.notification.chat.modlist.message.mode=§dYour response mode is §r"%s"§d.
-mchelishield.notification.overlay.screenshot.message=§c[WARNING] §dSending screenshot is requested from the server.
-mchelishield.notification.overlay.modlist.message=§c[WARNING] §dSending mod list is requested from the server.
+mchelishield.notification.overlay.screenshot.message=§c[WARNING] §dThe server is requesting a screenshot from you.
+mchelishield.notification.overlay.modlist.message=§c[WARNING] §dThe server is requesting your list of installed mods.
